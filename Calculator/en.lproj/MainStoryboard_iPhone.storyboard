@@ -342,9 +342,38 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="55" y="22"/>
+            <point key="canvasLocation" x="155" y="93"/>
         </scene>
     </scenes>
+    <classes>
+        <class className="NSLayoutConstraint" superclassName="NSObject">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/NSLayoutConstraint.h"/>
+        </class>
+        <class className="OOP2012ViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/OOP2012ViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="AllClear:"/>
+                <relationship kind="action" name="Eight:"/>
+                <relationship kind="action" name="Five:"/>
+                <relationship kind="action" name="Four:"/>
+                <relationship kind="action" name="Nine:"/>
+                <relationship kind="action" name="One:"/>
+                <relationship kind="action" name="Seven:"/>
+                <relationship kind="action" name="Six:"/>
+                <relationship kind="action" name="Three:"/>
+                <relationship kind="action" name="Two:"/>
+                <relationship kind="action" name="Zero:"/>
+                <relationship kind="action" name="dividebutton:"/>
+                <relationship kind="action" name="equalsbutton"/>
+                <relationship kind="action" name="minus:"/>
+                <relationship kind="action" name="multiplybutton:"/>
+                <relationship kind="action" name="plus:"/>
+                <relationship kind="action" name="point:"/>
+                <relationship kind="outlet" name="display" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="pointButton" candidateClass="UIButton"/>
+            </relationships>
+        </class>
+    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>
