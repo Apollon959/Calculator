@@ -34,59 +34,137 @@ int x;
 display.text = @"";
     n=1;
     pointFlug = 0;
-    self->pointButton.hidden = NO;
+    self->pointButton.enabled = YES;
 }
 
 - (IBAction)One:(id)sender {
-     display.text=[NSString stringWithFormat:@"%@1",display.text];
+    switch (pointFlug) {
+        case 0:
+            display.text=[NSString stringWithFormat:@"%@1",display.text];
+            break;
+        case 1:
+            
+            display.text= [NSString stringWithFormat:@"%g",[box doubleValue]+1*pow(10, -n)];
+            box = display.text;
+            n = n +1;
+            break;    }
+
   }
 - (IBAction)Two:(id)sender {
+    
            switch (pointFlug) {
         case 0:
               display.text=[NSString stringWithFormat:@"%@2",display.text];
             break;
-           case 1:
+        case 1:
                 
-               display.text= [NSString stringWithFormat:@"%f",[box longLongValue]+2*pow(10, -n)];
+               display.text= [NSString stringWithFormat:@"%g",[box doubleValue]+2*pow(10, -n)];
+               box = display.text;
                n = n +1;
-               break;
-               
-               /*
-               display.text=[NSString stringWithFormat:@"%@%s",display.text,2*pow(10,(-n))];
-               n = n +1;
-                */
-    }
+               break;   }
 }
 
 - (IBAction)Three:(id)sender {
-    display.text=[NSString stringWithFormat:@"%@3",display.text];}
+    switch (pointFlug) {
+        case 0:
+            display.text=[NSString stringWithFormat:@"%@3",display.text];
+            break;
+        case 1:
+            
+            display.text= [NSString stringWithFormat:@"%g",[box doubleValue]+3*pow(10, -n)];
+            box = display.text;
+            n = n +1;
+            break;
+                }
+}
 
 - (IBAction)Four:(id)sender {
-    display.text=[NSString stringWithFormat:@"%@4",display.text];
+    switch (pointFlug) {
+        case 0:
+            display.text=[NSString stringWithFormat:@"%@4",display.text];
+            break;
+        case 1:
+            
+            display.text= [NSString stringWithFormat:@"%g",[box doubleValue]+4*pow(10, -n)];
+            box = display.text;
+            n = n +1;
+        break;   }
 }
 
 - (IBAction)Five:(id)sender {
-    display.text=[NSString stringWithFormat:@"%@5",display.text];
+    switch (pointFlug) {
+        case 0:
+            display.text=[NSString stringWithFormat:@"%@5",display.text];
+            break;
+        case 1:
+            
+            display.text= [NSString stringWithFormat:@"%g",[box doubleValue]+5*pow(10, -n)];
+            box = display.text;
+            n = n +1;
+        break;   }
 }
 
 - (IBAction)Six:(id)sender {
-    display.text=[NSString stringWithFormat:@"%@6",display.text];
+    switch (pointFlug) {
+        case 0:
+            display.text=[NSString stringWithFormat:@"%@6",display.text];
+            break;
+        case 1:
+            
+            display.text= [NSString stringWithFormat:@"%g",[box doubleValue]+6*pow(10, -n)];
+            box = display.text;
+            n = n +1;
+        break;   }
 }
 
 - (IBAction)Seven:(id)sender {
-    display.text=[NSString stringWithFormat:@"%@7",display.text];
+    switch (pointFlug) {
+        case 0:
+            display.text=[NSString stringWithFormat:@"%@7",display.text];
+            break;
+        case 1:
+            
+            display.text= [NSString stringWithFormat:@"%g",[box doubleValue]+7*pow(10, -n)];
+            box = display.text;
+            n = n +1;
+        break;   }
 }
 
 - (IBAction)Eight:(id)sender {
-    display.text=[NSString stringWithFormat:@"%@8",display.text];
+    switch (pointFlug) {
+        case 0:
+            display.text=[NSString stringWithFormat:@"%@8",display.text];
+            break;
+        case 1:
+            
+            display.text= [NSString stringWithFormat:@"%g",[box doubleValue]+8*pow(10, -n)];
+            box = display.text;
+            n = n +1;
+        break;   }
 }
 
 - (IBAction)Nine:(id)sender {
-    display.text=[NSString stringWithFormat:@"%@9",display.text];
-}
+    switch (pointFlug) {
+        case 0:
+            display.text=[NSString stringWithFormat:@"%@9",display.text];
+            break;
+        case 1:
+            
+            display.text= [NSString stringWithFormat:@"%g",[box doubleValue]+9*pow(10, -n)];
+            box = display.text;
+            n = n +1;
+        break;   }}
 
 - (IBAction)Zero:(id)sender {
-    display.text=[NSString stringWithFormat:@"%@0",display.text];
+    switch (pointFlug) {
+        case 0:
+            display.text=[NSString stringWithFormat:@"%@0",display.text];
+            break;
+        case 1:
+            display.text= [NSString stringWithFormat:@"%g",[box doubleValue]+0*pow(10, -n)];
+            box = display.text;
+            n = n +1;
+        break;   }
 }
 
 
@@ -96,7 +174,7 @@ display.text = @"";
     operation = Minus;
     storage = display.text;
     display.text=@"";
-    self->pointButton.hidden = NO;
+    self->pointButton.enabled = YES;
     pointFlug = 0;
     n=1;
 }
@@ -105,7 +183,7 @@ display.text = @"";
     operation = Plus;
     storage = display.text;
     display.text=@"";
-    self->pointButton.hidden = NO;
+    self->pointButton.enabled = YES;
     pointFlug = 0;
     n=1;
 }
@@ -115,7 +193,7 @@ display.text = @"";
     operation = Divide;
     storage = display.text;
     display.text=@"";
-    self->pointButton.hidden = NO;
+    self->pointButton.enabled = YES;
     pointFlug = 0;
     n=1;
 }
@@ -125,7 +203,7 @@ display.text = @"";
     operation = Multiply;
     storage = display.text;
     display.text=@"";
-    self->pointButton.hidden = NO;
+    self->pointButton.enabled = YES;
     pointFlug = 0;
     n=1;
 }
@@ -134,16 +212,16 @@ display.text = @"";
     NSString *val = display.text;
     switch(operation) {
         case Plus :
-            display.text= [NSString stringWithFormat:@"%qi",[val longLongValue]+[storage longLongValue]];
+            display.text= [NSString stringWithFormat:@"%g",[val doubleValue]+[storage doubleValue]];
             break;
         case Minus:
-            display.text= [NSString stringWithFormat:@"%qi",[storage longLongValue]-[val longLongValue]];
+            display.text= [NSString stringWithFormat:@"%g",[storage doubleValue]-[val doubleValue]];
             break;
         case Divide:
-            display.text= [NSString stringWithFormat:@"%qi",[storage longLongValue]/[val longLongValue]];
+            display.text= [NSString stringWithFormat:@"%g",[storage doubleValue]/[val doubleValue]];
             break;
         case Multiply:
-            display.text= [NSString stringWithFormat:@"%qi",[val longLongValue]*[storage longLongValue]];
+            display.text= [NSString stringWithFormat:@"%g",[val doubleValue]*[storage doubleValue]];
             break;
     }
     pointFlug = 0;
@@ -152,9 +230,8 @@ display.text = @"";
 
 - (IBAction)point:(id)sender {
     box = display.text;
-
     pointFlug = 1;
-    self->pointButton.hidden = YES;
+    self->pointButton.enabled = NO;
 }
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
