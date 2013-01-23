@@ -14,10 +14,13 @@
 
 @implementation OOP2012ViewController
 
+@synthesize statemachine;
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
+    statemachine = [[StateMachine alloc] init];
 }
 
 - (void)didReceiveMemoryWarning
@@ -30,202 +33,129 @@ int n=1;
 int pointFlug = 0;
 int x;
 
+-(void)name:(int)number{
+    switch (pointFlug) {
+        case 0:
+            display.text=[NSString stringWithFormat:@"%@%d",display.text,number];
+            break;
+        case 1:
+            display.text= [NSString stringWithFormat:@"%g",[box doubleValue]+number*pow(10, -n)];
+            box = display.text;
+            n = n +1;
+            break;
+    }
+}
+
+-(void)select{
+    storage = display.text;
+    display.text=@"";
+    self->pointButton.enabled = YES;
+    pointFlug = 0;
+    n=1;
+}
+
+
 - (IBAction)AllClear:(id)sender {
-display.text = @"";
+    display.text = @"";
     n=1;
     pointFlug = 0;
     self->pointButton.enabled = YES;
+    
 }
 
 - (IBAction)One:(id)sender {
-    switch (pointFlug) {
-        case 0:
-            display.text=[NSString stringWithFormat:@"%@1",display.text];
-            break;
-        case 1:
-            
-            display.text= [NSString stringWithFormat:@"%g",[box doubleValue]+1*pow(10, -n)];
-            box = display.text;
-            n = n +1;
-            break;    }
-
+    [self name:1];
   }
 - (IBAction)Two:(id)sender {
-    
-           switch (pointFlug) {
-        case 0:
-              display.text=[NSString stringWithFormat:@"%@2",display.text];
-            break;
-        case 1:
-                
-               display.text= [NSString stringWithFormat:@"%g",[box doubleValue]+2*pow(10, -n)];
-               box = display.text;
-               n = n +1;
-               break;   }
-}
+    [self name:2];
+    }
 
 - (IBAction)Three:(id)sender {
-    switch (pointFlug) {
-        case 0:
-            display.text=[NSString stringWithFormat:@"%@3",display.text];
-            break;
-        case 1:
-            
-            display.text= [NSString stringWithFormat:@"%g",[box doubleValue]+3*pow(10, -n)];
-            box = display.text;
-            n = n +1;
-            break;
-                }
+    [self name:3];
 }
 
 - (IBAction)Four:(id)sender {
-    switch (pointFlug) {
-        case 0:
-            display.text=[NSString stringWithFormat:@"%@4",display.text];
-            break;
-        case 1:
-            
-            display.text= [NSString stringWithFormat:@"%g",[box doubleValue]+4*pow(10, -n)];
-            box = display.text;
-            n = n +1;
-        break;   }
+    [self name:4];
 }
 
 - (IBAction)Five:(id)sender {
-    switch (pointFlug) {
-        case 0:
-            display.text=[NSString stringWithFormat:@"%@5",display.text];
-            break;
-        case 1:
-            
-            display.text= [NSString stringWithFormat:@"%g",[box doubleValue]+5*pow(10, -n)];
-            box = display.text;
-            n = n +1;
-        break;   }
+    [self name:5];
 }
 
 - (IBAction)Six:(id)sender {
-    switch (pointFlug) {
-        case 0:
-            display.text=[NSString stringWithFormat:@"%@6",display.text];
-            break;
-        case 1:
-            
-            display.text= [NSString stringWithFormat:@"%g",[box doubleValue]+6*pow(10, -n)];
-            box = display.text;
-            n = n +1;
-        break;   }
+    [self name:6];
 }
 
 - (IBAction)Seven:(id)sender {
-    switch (pointFlug) {
-        case 0:
-            display.text=[NSString stringWithFormat:@"%@7",display.text];
-            break;
-        case 1:
-            
-            display.text= [NSString stringWithFormat:@"%g",[box doubleValue]+7*pow(10, -n)];
-            box = display.text;
-            n = n +1;
-        break;   }
+    [self name:7];
 }
 
 - (IBAction)Eight:(id)sender {
-    switch (pointFlug) {
-        case 0:
-            display.text=[NSString stringWithFormat:@"%@8",display.text];
-            break;
-        case 1:
-            
-            display.text= [NSString stringWithFormat:@"%g",[box doubleValue]+8*pow(10, -n)];
-            box = display.text;
-            n = n +1;
-        break;   }
+    [self name:8];
 }
 
 - (IBAction)Nine:(id)sender {
-    switch (pointFlug) {
-        case 0:
-            display.text=[NSString stringWithFormat:@"%@9",display.text];
-            break;
-        case 1:
-            
-            display.text= [NSString stringWithFormat:@"%g",[box doubleValue]+9*pow(10, -n)];
-            box = display.text;
-            n = n +1;
-        break;   }}
+    [self name:9];
+}
 
 - (IBAction)Zero:(id)sender {
-    switch (pointFlug) {
-        case 0:
-            display.text=[NSString stringWithFormat:@"%@0",display.text];
-            break;
-        case 1:
-            display.text= [NSString stringWithFormat:@"%g",[box doubleValue]+0*pow(10, -n)];
-            box = display.text;
-            n = n +1;
-        break;   }
+    [self name:0];
 }
 
 
 
 - (IBAction)minus:(id)sender {
-    
     operation = Minus;
-    storage = display.text;
-    display.text=@"";
-    self->pointButton.enabled = YES;
-    pointFlug = 0;
-    n=1;
+    [self select];
 }
 - (IBAction)plus:(id)sender {
-    
     operation = Plus;
-    storage = display.text;
-    display.text=@"";
-    self->pointButton.enabled = YES;
-    pointFlug = 0;
-    n=1;
-}
+    [self select];
+    }
 
 - (IBAction) dividebutton:(id)sender {
-    
     operation = Divide;
-    storage = display.text;
-    display.text=@"";
-    self->pointButton.enabled = YES;
-    pointFlug = 0;
-    n=1;
-}
+    [self select];
+   }
 
 - (IBAction)multiplybutton:(id)sender {
-    
     operation = Multiply;
-    storage = display.text;
-    display.text=@"";
-    self->pointButton.enabled = YES;
-    pointFlug = 0;
-    n=1;
+    [self select];
 }
 
 - (IBAction) equalsbutton {
-    NSString *val = display.text;
+    statemachine.save = display.text;
     switch(operation) {
         case Plus :
-            display.text= [NSString stringWithFormat:@"%g",[val doubleValue]+[storage doubleValue]];
+            display.text= [self calculate:Plus];
             break;
         case Minus:
-            display.text= [NSString stringWithFormat:@"%g",[storage doubleValue]-[val doubleValue]];
+            display.text= [self calculate:Minus];
             break;
         case Divide:
-            display.text= [NSString stringWithFormat:@"%g",[storage doubleValue]/[val doubleValue]];
+            display.text= [self calculate:Divide];
             break;
         case Multiply:
-            display.text= [NSString stringWithFormat:@"%g",[val doubleValue]*[storage doubleValue]];
+            display.text= [self calculate:Multiply];
             break;
     }
+    
     pointFlug = 0;
     n=1;
+}
+
+- (NSString *)calculate:(int)operater{
+    NSString *val = display.text;
+    switch (operation) {
+        case Plus :
+            return [NSString stringWithFormat:@"%g",[val doubleValue]+[storage doubleValue]];
+        case Minus:
+            return [NSString stringWithFormat:@"%g",[storage doubleValue]-[val doubleValue]];
+        case Divide:
+            return [NSString stringWithFormat:@"%g",[storage doubleValue]/[val doubleValue]];
+        case Multiply:
+            return [NSString stringWithFormat:@"%g",[val doubleValue]*[storage doubleValue]];
+    }
 }
 
 - (IBAction)point:(id)sender {
@@ -233,11 +163,11 @@ display.text = @"";
     pointFlug = 1;
     self->pointButton.enabled = NO;
 }
-
+/*
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
 {
     return (interfaceOrientation != UIInterfaceOrientationPortraitUpsideDown);
 }
-
+*/
 
 @end

@@ -24,6 +24,7 @@
 		0EA6690316366AAF00913DAB /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0EA668DB16366AAE00913DAB /* Foundation.framework */; };
 		0EA6690B16366AAF00913DAB /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 0EA6690916366AAF00913DAB /* InfoPlist.strings */; };
 		0EA6690E16366AAF00913DAB /* CalculatorTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0EA6690D16366AAF00913DAB /* CalculatorTests.m */; };
+		0EE4C5D816A7BAF7004EA73B /* StateMachine.m in Sources */ = {isa = PBXBuildFile; fileRef = 0EE4C5D716A7BAF7004EA73B /* StateMachine.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -60,6 +61,8 @@
 		0EA6690A16366AAF00913DAB /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		0EA6690C16366AAF00913DAB /* CalculatorTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CalculatorTests.h; sourceTree = "<group>"; };
 		0EA6690D16366AAF00913DAB /* CalculatorTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CalculatorTests.m; sourceTree = "<group>"; };
+		0EE4C5D616A7BAF7004EA73B /* StateMachine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StateMachine.h; sourceTree = "<group>"; };
+		0EE4C5D716A7BAF7004EA73B /* StateMachine.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StateMachine.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -135,6 +138,8 @@
 			children = (
 				0EA668E116366AAE00913DAB /* Calculator-Info.plist */,
 				0EA668E216366AAF00913DAB /* InfoPlist.strings */,
+				0EE4C5D616A7BAF7004EA73B /* StateMachine.h */,
+				0EE4C5D716A7BAF7004EA73B /* StateMachine.m */,
 				0EA668E516366AAF00913DAB /* main.m */,
 				0EA668E716366AAF00913DAB /* Calculator-Prefix.pch */,
 				0EA668EB16366AAF00913DAB /* Default.png */,
@@ -278,6 +283,7 @@
 				0EA668E616366AAF00913DAB /* main.m in Sources */,
 				0EA668EA16366AAF00913DAB /* OOP2012AppDelegate.m in Sources */,
 				0EA668F916366AAF00913DAB /* OOP2012ViewController.m in Sources */,
+				0EE4C5D816A7BAF7004EA73B /* StateMachine.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -461,6 +467,7 @@
 				0EA6691316366AAF00913DAB /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		0EA6691416366AAF00913DAB /* Build configuration list for PBXNativeTarget "CalculatorTests" */ = {
 			isa = XCConfigurationList;
@@ -469,6 +476,7 @@
 				0EA6691616366AAF00913DAB /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

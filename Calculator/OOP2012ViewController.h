@@ -7,6 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "StateMachine.h"
+
 typedef enum{ Plus,Minus,Multiply,Divide} CalcOperation;
 @interface OOP2012ViewController : UIViewController
 {
@@ -17,6 +19,7 @@ typedef enum{ Plus,Minus,Multiply,Divide} CalcOperation;
     __weak IBOutlet UIButton *pointButton;
 }
 
+@property(readonly)  StateMachine* statemachine;
 
 - (IBAction)AllClear:(id)sender;
 - (IBAction)One:(id)sender;
@@ -33,5 +36,7 @@ typedef enum{ Plus,Minus,Multiply,Divide} CalcOperation;
 - (IBAction)minus:(id)sender;
 - (IBAction) equalsbutton;
 - (IBAction)point:(id)sender;
+
+- (NSString *)calculate:(int)operater;
 
 @end
