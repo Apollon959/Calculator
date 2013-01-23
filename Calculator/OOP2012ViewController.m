@@ -8,6 +8,7 @@
 
 #import "OOP2012ViewController.h"
 
+
 @interface OOP2012ViewController ()
 
 @end
@@ -15,6 +16,8 @@
 @implementation OOP2012ViewController
 
 @synthesize statemachine;
+//@synthesize box;
+//@synthesize storage;
 
 - (void)viewDidLoad
 {
@@ -33,141 +36,101 @@ int n=1;
 int pointFlug = 0;
 int x;
 
--(void)name:(int)number{
-    switch (pointFlug) {
-        case 0:
-            display.text=[NSString stringWithFormat:@"%@%d",display.text,number];
-            break;
-        case 1:
-            display.text= [NSString stringWithFormat:@"%g",[box doubleValue]+number*pow(10, -n)];
-            box = display.text;
-            n = n +1;
-            break;
-    }
-}
-
 -(void)select{
     storage = display.text;
     display.text=@"";
-    self->pointButton.enabled = YES;
     pointFlug = 0;
-    n=1;
+    [statemachine nClear];
+    //n=1;
 }
-
 
 - (IBAction)AllClear:(id)sender {
     display.text = @"";
-    n=1;
+    [statemachine nClear];
+    //n=1;
     pointFlug = 0;
     self->pointButton.enabled = YES;
     
 }
 
 - (IBAction)One:(id)sender {
-    [self name:1];
+    display.text = [statemachine ten:1 flug:pointFlug pull:display.text];
+    
   }
+
 - (IBAction)Two:(id)sender {
-    [self name:2];
+    display.text = [statemachine ten:2 flug:pointFlug pull:display.text];
     }
 
 - (IBAction)Three:(id)sender {
-    [self name:3];
+    display.text = [statemachine ten:3 flug:pointFlug pull:display.text];
 }
 
 - (IBAction)Four:(id)sender {
-    [self name:4];
+    display.text = [statemachine ten:4 flug:pointFlug pull:display.text];
 }
 
 - (IBAction)Five:(id)sender {
-    [self name:5];
+    display.text = [statemachine ten:5 flug:pointFlug pull:display.text];
 }
 
 - (IBAction)Six:(id)sender {
-    [self name:6];
+    display.text = [statemachine ten:6 flug:pointFlug pull:display.text];
 }
 
 - (IBAction)Seven:(id)sender {
-    [self name:7];
+    display.text = [statemachine ten:7 flug:pointFlug pull:display.text];
 }
 
 - (IBAction)Eight:(id)sender {
-    [self name:8];
+    display.text = [statemachine ten:8 flug:pointFlug pull:display.text];
 }
 
 - (IBAction)Nine:(id)sender {
-    [self name:9];
+    display.text = [statemachine ten:9 flug:pointFlug pull:display.text];
 }
 
 - (IBAction)Zero:(id)sender {
-    [self name:0];
+    display.text = [statemachine ten:0 flug:pointFlug pull:display.text];
 }
 
 
 
 - (IBAction)minus:(id)sender {
     operation = Minus;
+    self->pointButton.enabled = YES;
     [self select];
 }
 - (IBAction)plus:(id)sender {
     operation = Plus;
+    self->pointButton.enabled = YES;
     [self select];
     }
 
 - (IBAction) dividebutton:(id)sender {
     operation = Divide;
+    self->pointButton.enabled = YES;
     [self select];
    }
 
 - (IBAction)multiplybutton:(id)sender {
     operation = Multiply;
+    self->pointButton.enabled = YES;
     [self select];
 }
 
 - (IBAction) equalsbutton {
-    statemachine.save = display.text;
-    switch(operation) {
-        case Plus :
-            display.text= [self calculate:Plus];
-            break;
-        case Minus:
-            display.text= [self calculate:Minus];
-            break;
-        case Divide:
-            display.text= [self calculate:Divide];
-            break;
-        case Multiply:
-            display.text= [self calculate:Multiply];
-            break;
-    }
-    
+    display.text = [statemachine calculate:display.text before:storage key:operation];
     pointFlug = 0;
-    n=1;
+    [statemachine nClear];
+    //n=1;
 }
 
-- (NSString *)calculate:(int)operater{
-    NSString *val = display.text;
-    switch (operation) {
-        case Plus :
-            return [NSString stringWithFormat:@"%g",[val doubleValue]+[storage doubleValue]];
-        case Minus:
-            return [NSString stringWithFormat:@"%g",[storage doubleValue]-[val doubleValue]];
-        case Divide:
-            return [NSString stringWithFormat:@"%g",[storage doubleValue]/[val doubleValue]];
-        case Multiply:
-            return [NSString stringWithFormat:@"%g",[val doubleValue]*[storage doubleValue]];
-    }
-}
 
 - (IBAction)point:(id)sender {
-    box = display.text;
     pointFlug = 1;
+    [statemachine setBox:display.text];
     self->pointButton.enabled = NO;
 }
-/*
-- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
-{
-    return (interfaceOrientation != UIInterfaceOrientationPortraitUpsideDown);
-}
-*/
 
 @end

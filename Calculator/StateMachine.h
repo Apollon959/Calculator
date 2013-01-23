@@ -8,19 +8,23 @@
 
 #import <Foundation/Foundation.h>
 
-typedef enum{ Plusmax,Minusmax,Multiplymax,Dividemax} CalcOperationMax;
+typedef enum{Plus,Minus,Multiply,Divide} CalcOperation;
 
 @interface StateMachine : NSObject{
-    NSString *storage;
+    CalcOperation operation;
+    int n;
     NSString *box;
-    CalcOperationMax operation;
 }
 
--(NSString*)name:(int)number;
+-(NSString*)ten:(int)number
+           flug:(int)pointFlug
+           pull:(NSString*)answer;
 -(void)select;
-
-- (NSString *)calculate:(int)operater;
-
+- (NSString *)calculate:(NSString*)val
+                 before:(NSString*)storage
+                    key:(int)operaion;
+-(void)nClear;
+-(void)setBox:(NSString*)okamura;
 @property NSString *save;
 
 @end

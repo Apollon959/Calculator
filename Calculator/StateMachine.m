@@ -7,22 +7,19 @@
 //
 
 #import "StateMachine.h"
-#import "OOP2012ViewController.h"
 @implementation StateMachine
 
 @synthesize save;
 
--(NSString*)name:(int)number{
-    return NULL;
-}
--(void)select{
-    
-}
 
-
-- (NSString *)calculate:(int)operater{
-    NSString *val = save;//display.textとsaveが同じ
-    switch (operation) {
+- (NSString *)calculate:(NSString*)val
+                 before:(NSString*)storage
+                    key:(int)ope
+{
+    NSLog(@"val:%@",val);
+    NSLog(@"storage:%@",storage);
+    NSLog(@"ope:%d",ope);
+    switch (ope) {
         case Plus :
             return [NSString stringWithFormat:@"%g",[val doubleValue]+[storage doubleValue]];
         case Minus:
@@ -32,7 +29,35 @@
         case Multiply:
             return [NSString stringWithFormat:@"%g",[val doubleValue]*[storage doubleValue]];
     }
+    return NULL;
 }
 
+
+-(NSString*)ten:(int)number
+           flug:(int)pointFlug
+           pull:(NSString*)answer
+{
+    switch (pointFlug) {
+        case 0:
+            answer=[NSString stringWithFormat:@"%@%d",answer,number];
+            break;
+        case 1:
+            answer= [NSString stringWithFormat:@"%g",[box doubleValue]+number*pow(10, -n)];
+            box = answer;
+            NSLog(@"box:%f",[box doubleValue]);
+            n = n + 1;
+            break;
+    }
+    return answer;
+}
+
+-(void)nClear{
+    n = 1;
+}
+
+-(void)setBox:(NSString*)okamura{
+    box = okamura;
+    
+}
 
 @end

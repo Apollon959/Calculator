@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "StateMachine.h"
 
-typedef enum{ Plus,Minus,Multiply,Divide} CalcOperation;
+//typedef enum{ Plus,Minus,Multiply,Divide} CalcOperation;
 @interface OOP2012ViewController : UIViewController
 {
     IBOutlet UITextField *display;
@@ -20,6 +20,7 @@ typedef enum{ Plus,Minus,Multiply,Divide} CalcOperation;
 }
 
 @property(readonly)  StateMachine* statemachine;
+
 
 - (IBAction)AllClear:(id)sender;
 - (IBAction)One:(id)sender;
