@@ -55,8 +55,8 @@
     n = 1;
 }
 
--(void)setBox:(NSString*)okamura{
-    box = okamura;
+-(void)setBox:(NSString*)realnum{
+    box = realnum;
     
 }
 
