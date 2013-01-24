@@ -9,9 +9,6 @@
 #import "StateMachine.h"
 @implementation StateMachine
 
-@synthesize save;
-
-
 - (NSString *)calculate:(NSString*)val
                  before:(NSString*)storage
                     key:(int)ope
@@ -57,7 +54,6 @@
 
 -(void)setBox:(NSString*)realnum{
     box = realnum;
-    
 }
 
 @end

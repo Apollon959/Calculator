@@ -16,8 +16,6 @@
 @implementation OOP2012ViewController
 
 @synthesize statemachine;
-//@synthesize box;
-//@synthesize storage;
 
 - (void)viewDidLoad
 {
@@ -41,13 +39,11 @@ int x;
     display.text=@"";
     pointFlug = 0;
     [statemachine nClear];
-    //n=1;
 }
 
 - (IBAction)AllClear:(id)sender {
     display.text = @"";
     [statemachine nClear];
-    //n=1;
     pointFlug = 0;
     self->pointButton.enabled = YES;
     
@@ -123,7 +119,6 @@ int x;
     display.text = [statemachine calculate:display.text before:storage key:operation];
     pointFlug = 0;
     [statemachine nClear];
-    //n=1;
 }
 
 

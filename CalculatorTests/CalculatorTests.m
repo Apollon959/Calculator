@@ -7,6 +7,7 @@
 //
 
 #import "CalculatorTests.h"
+#import "StateMachine.h"
 
 @implementation CalculatorTests
 

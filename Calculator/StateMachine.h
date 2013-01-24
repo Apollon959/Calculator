@@ -11,20 +11,21 @@
 typedef enum{Plus,Minus,Multiply,Divide} CalcOperation;
 
 @interface StateMachine : NSObject{
-    CalcOperation operation;
     int n;
     NSString *box;
 }
 
+-(void)nClear;
+-(void)setBox:(NSString*)realnum;
+
 -(NSString*)ten:(int)number
            flug:(int)pointFlug
            pull:(NSString*)answer;
--(void)select;
+
 - (NSString *)calculate:(NSString*)val
                  before:(NSString*)storage
                     key:(int)operaion;
--(void)nClear;
--(void)setBox:(NSString*)okamura;
-@property NSString *save;
+
+
 
 @end

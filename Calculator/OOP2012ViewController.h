@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "StateMachine.h"
 
-//typedef enum{ Plus,Minus,Multiply,Divide} CalcOperation;
+
 @interface OOP2012ViewController : UIViewController
 {
     IBOutlet UITextField *display;
@@ -38,6 +38,5 @@
 - (IBAction) equalsbutton;
 - (IBAction)point:(id)sender;
 
-- (NSString *)calculate:(int)operater;
 
 @end
